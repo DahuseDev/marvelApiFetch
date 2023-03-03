@@ -9,7 +9,28 @@ window.onload=function(){
         name=document.getElementById('nom').value;
         doRequest();
     })   
+
+
+   
+    const promesa1 = new Promise((resolve,reject)=>{
+        setTimeout(resolve, 100, 'Hombre de Hierro');
+    });
+    const promesa2 = new Promise((resolve,reject)=>{
+        setTimeout(resolve, 200, 'Kang el Conejo');
+    });
+    Promise.all([promesa1, promesa2])
+    .then(([resultat1, resultat2]) => {
+        console.log(resultat1+" vs "+ resultat2);
+    })
+    .then(()=>{
+        Promise.race([promesa1, promesa2]).then((value)=> {
+            console.log("Ha guanyat: "+value); 
+        })
+    })
+    
 }
+
+
 
 
 function doRequest(){

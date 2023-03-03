@@ -78,7 +78,7 @@ div#fosc {
 
     
 .typing-demo{
-    width: 36ch; 
+    width: 43ch; 
     animation: typing 2s steps(22), blink .5s step-end infinite; 
     white-space: nowrap;
     overflow: hidden;
